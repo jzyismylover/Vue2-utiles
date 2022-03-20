@@ -25,7 +25,7 @@ function isFalse (v) {
 
 
 /**
- * 判断 value 是否是原始值（基本类型）
+ * @function 判断 value 是否是原始值（基本类型）
  */
 function isPrimitive (value) {
   return (
@@ -39,7 +39,8 @@ function isPrimitive (value) {
 
 
 /**
- * 判断 obj 是不是引用类型（注意 typeof null === 'object'）
+ *  @function 判断obj是不是引用类型
+ * @description 注意 typeof null === 'object'
  */
 function isObject (obj) {
   return obj !== null && typeof obj === 'object'
@@ -59,7 +60,8 @@ function toRawType (value) {
 
 
 /**
- * 判断是否是纯对象（不为数组 / null）
+ * @function 判断是否是纯对象
+ * @description 不为数组 / null
  */
 function isPlainObject (obj) {
   return _toString.call(obj) === '[object Object]'
@@ -67,7 +69,7 @@ function isPlainObject (obj) {
 
 
 /**
- * 判断是否是正则表达式
+ *  @function 判断是否是正则表达式
  */
 function isRegExp (v) {
   return _toString.call(v) === '[object RegExp]'
@@ -75,7 +77,7 @@ function isRegExp (v) {
 
 
 /**
- * 判断是否是正确的数组索引（0、1、2...etc）
+ *  @function 判断是否是正确的数组索引（0、1、2...etc）
  */
 function isValidArrayIndex (val) {
   var n = parseFloat(String(val));
@@ -97,7 +99,7 @@ function isValidArrayIndex (val) {
 
 
 /**
- * 判断是否是 promise
+ *  @function 判断是否是 promise
  */
 function isPromise (val) {
   return (
@@ -109,7 +111,7 @@ function isPromise (val) {
 
 
 /**
- * 将某个类型的数据转换成 String 类型
+ *  @function 将某个类型的数据转换成 String 类型
  */
 function toString (val) {
   return val == null // 排除 undefined 和 null
@@ -126,7 +128,7 @@ function toString (val) {
 
 
 /**
- * 将输入的类型转化为数值类型
+ *  @function 将输入的类型转化为数值类型
  */
 function toNumber (val) {
   var n = parseFloat(val);
@@ -189,7 +191,7 @@ var isReservedAttribute = makeMap('key,ref,slot,slot-scope,is');
 
 
 /**
- * 从数组中移除一个元素
+ *  @function 从数组中移除一个元素
  */
 function remove (arr, item) {
   if (arr.length) {
@@ -202,7 +204,7 @@ function remove (arr, item) {
 
 
 /**
- * 检测某个属性在数组中是否存在
+ *  @function 检测某个属性在数组中是否存在
  */
 var hasOwnProperty = Object.prototype.hasOwnProperty;
 function hasOwn (obj, key) {
@@ -223,7 +225,7 @@ function cached (fn) {
 
 
 /**
- * 连字符转camelCase(小驼峰)
+ *  @function 连字符转camelCase(小驼峰)
  */
 var camelizeRE = /-(\w)/g;
 var camelize = cached(function (str) {
@@ -241,7 +243,7 @@ var camelize = cached(function (str) {
 
 
 /**
- * 首字母转大写
+ *  @function 首字母转大写
  */
 var capitalize = cached(function (str) {
   return str.charAt(0).toUpperCase() + str.slice(1)
@@ -250,7 +252,7 @@ var capitalize = cached(function (str) {
 
 
 /**
- * camelCase(小驼峰)转连字符
+ *  @function camelCase(小驼峰)转连字符
  */
 var hyphenateRE = /\B([A-Z])/g;
 var hyphenate = cached(function (str) {
